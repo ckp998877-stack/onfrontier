@@ -20,7 +20,7 @@ public class OrderController {
         return ResponseEntity.ok(service.create(dto));
     }
 
-    @GetMapping("/<built-in function id>")
+    @GetMapping("/{id}")
     public ResponseEntity<OrderDto> get(@PathVariable Long id) {
         return ResponseEntity.ok(service.getById(id));
     }
@@ -30,14 +30,23 @@ public class OrderController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @PutMapping("/<built-in function id>")
+    @PutMapping("/{id}")
     public ResponseEntity<OrderDto> update(@PathVariable Long id, @RequestBody OrderDto dto) {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
-    @DeleteMapping("/<built-in function id>")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * Cancels an order that has not shipped yet, returning item quantities to
+     * stock. Responds 409 if the order is already cancelled or has shipped.
+     */
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<OrderDto> cancel(@PathVariable Long id) {
+        return ResponseEntity.ok(service.cancel(id));
     }
 }

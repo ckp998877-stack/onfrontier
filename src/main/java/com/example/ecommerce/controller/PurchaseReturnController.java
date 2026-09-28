@@ -20,7 +20,7 @@ public class PurchaseReturnController {
         return ResponseEntity.ok(service.create(dto));
     }
 
-    @GetMapping("/<built-in function id>")
+    @GetMapping("/{id}")
     public ResponseEntity<PurchaseReturnDto> get(@PathVariable Long id) {
         return ResponseEntity.ok(service.getById(id));
     }
@@ -30,12 +30,12 @@ public class PurchaseReturnController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @PutMapping("/<built-in function id>")
+    @PutMapping("/{id}")
     public ResponseEntity<PurchaseReturnDto> update(@PathVariable Long id, @RequestBody PurchaseReturnDto dto) {
         return ResponseEntity.ok(service.update(id, dto));
     }
 
-    @DeleteMapping("/<built-in function id>")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();

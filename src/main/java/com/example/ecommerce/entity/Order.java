@@ -5,7 +5,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "order")
+// "order" is a reserved SQL keyword, so the name is escaped to keep it quoted.
+@Table(name = "`order`")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
