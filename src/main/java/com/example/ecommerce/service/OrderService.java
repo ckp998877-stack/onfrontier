@@ -9,4 +9,5 @@ public interface OrderService {
     List<OrderDto> getAll();
     OrderDto update(Long id, OrderDto dto);
     void delete(Long id);
+    OrderDto cancel(Long id);
 }

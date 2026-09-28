@@ -40,6 +40,9 @@ public class OrderItemServiceImpl implements OrderItemService {
         entity.setCode(dto.getCode());
         entity.setName(dto.getName());
         entity.setStatus(dto.getStatus());
+        entity.setQuantity(dto.getQuantity());
+        entity.setOrderId(dto.getOrderId());
+        entity.setProductId(dto.getProductId());
         return toDto(repository.save(entity));
     }
 
@@ -54,6 +57,9 @@ public class OrderItemServiceImpl implements OrderItemService {
         e.setCode(dto.getCode());
         e.setName(dto.getName());
         e.setStatus(dto.getStatus());
+        e.setQuantity(dto.getQuantity());
+        e.setOrderId(dto.getOrderId());
+        e.setProductId(dto.getProductId());
         return e;
     }
 
@@ -63,6 +69,9 @@ public class OrderItemServiceImpl implements OrderItemService {
         d.setCode(e.getCode());
         d.setName(e.getName());
         d.setStatus(e.getStatus());
+        d.setQuantity(e.getQuantity());
+        d.setOrderId(e.getOrderId());
+        d.setProductId(e.getProductId());
         return d;
     }
 }

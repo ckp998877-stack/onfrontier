@@ -1,6 +1,6 @@
--- PostgreSQL database bootstrap
+-- H2 database bootstrap
 CREATE TABLE IF NOT EXISTS app_health (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     application_name VARCHAR(150) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

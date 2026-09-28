@@ -40,6 +40,7 @@ public class ProductServiceImpl implements ProductService {
         entity.setCode(dto.getCode());
         entity.setName(dto.getName());
         entity.setStatus(dto.getStatus());
+        entity.setStockQuantity(dto.getStockQuantity());
         return toDto(repository.save(entity));
     }
 
@@ -54,6 +55,7 @@ public class ProductServiceImpl implements ProductService {
         e.setCode(dto.getCode());
         e.setName(dto.getName());
         e.setStatus(dto.getStatus());
+        e.setStockQuantity(dto.getStockQuantity());
         return e;
     }
 
@@ -63,6 +65,7 @@ public class ProductServiceImpl implements ProductService {
         d.setCode(e.getCode());
         d.setName(e.getName());
         d.setStatus(e.getStatus());
+        d.setStockQuantity(e.getStockQuantity());
         return d;
     }
 }

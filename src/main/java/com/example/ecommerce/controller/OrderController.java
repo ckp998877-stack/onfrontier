@@ -40,4 +40,9 @@ public class OrderController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<OrderDto> cancel(@PathVariable Long id) {
+        return ResponseEntity.ok(service.cancel(id));
+    }
 }
